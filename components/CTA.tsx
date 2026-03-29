@@ -3,8 +3,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 // Replace with your actual WhatsApp number and email
-const WHATSAPP = 'https://wa.me/919999999999?text=Hi%20Aswin%2C%20I%27d%20like%20to%20discuss%20a%20project!'
-const EMAIL = 'mailto:aswin@example.com'
+const WHATSAPP = 'https://wa.me/918921174618?text=Hi%20Aswin%2C%20I%27d%20like%20to%20discuss%20a%20project!'
+const EMAIL = 'mailto:xaswin230@gmail.com'
 
 export default function CTA() {
   const ref = useRef(null)
