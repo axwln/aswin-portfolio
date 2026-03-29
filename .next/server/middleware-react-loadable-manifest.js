@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app/page.tsx -> @/components/Cursor\":{\"id\":\"app/page.tsx -> @/components/Cursor\",\"files\":[\"static/chunks/_app-pages-browser_components_Cursor_tsx.js\"]}}"
