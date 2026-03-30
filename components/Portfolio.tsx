@@ -29,7 +29,9 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-sm aspect-[9/16]"
+          className={`relative ${
+        modalProject.category === 'Wedding & Events' ? 'w-full max-w-4xl aspect-video' : 'w-full max-w-sm aspect-[9/16]'
+      }`}
           onClick={e => e.stopPropagation()}
         >
           <video
@@ -60,6 +62,7 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
 function ProjectCard({ project, index, onClick }: { project: typeof projects[0]; index: number; onClick: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [hovered, setHovered] = useState(false)
+  const isLandscape = project.category === 'Wedding & Events'
 
   const handleEnter = () => {
     setHovered(true)
@@ -83,7 +86,9 @@ function ProjectCard({ project, index, onClick }: { project: typeof projects[0];
       onMouseLeave={handleLeave}
       onClick={onClick}
       data-hover
-      className="relative aspect-[9/16] rounded-xl overflow-hidden group cursor-pointer"
+      className={`relative rounded-xl overflow-hidden group cursor-pointer ${
+        isLandscape ? 'aspect-video' : 'aspect-[9/16]'
+      }`}
     >
       <div className="absolute inset-0 bg-[#111]">
         {/* Thumbnail shown before hover */}
