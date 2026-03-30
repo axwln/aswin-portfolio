@@ -3,15 +3,15 @@ import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const projects = [
-  { title: 'Car Edit Vol.1',  category: 'Reels Editing', src: '/videos/car1.mp4',    thumb: '/thumbnails/car1.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.2',  category: 'Reels Editing', src: '/videos/car2.mp4',    thumb: '/thumbnails/car2.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Bus Reel',        category: 'Reels Editing', src: '/videos/bus1.mp4',    thumb: '/thumbnails/bus1.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.3',  category: 'Reels Editing', src: '/videos/car3.mp4',    thumb: '/thumbnails/car3.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Model Edit Vol.1', category: 'Reels Editing',   src: '/videos/model1.mp4',   thumb: '/thumbnails/model1.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
-  { title: 'Model Edit Vol.2', category: 'Reels Editing',   src: '/videos/model2.mp4',   thumb: '/thumbnails/model2.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
-  { title: 'Haldi DJ Night',   category: 'Wedding & Events', src: '/videos/HALDI_DJ.mp4',    thumb: '/thumbnails/HALDI_DJ.jpg',    duration: '0:30', banner: 'Wedding & Events' },
-  { title: 'Oppo Reno 15',     category: 'Ads & Promos',     src: '/videos/oppo_RENO15.mp4', thumb: '/thumbnails/oppo_RENO15.jpg', duration: '0:30', banner: 'Ads & Promotions' },
-  { title: 'Thim',             category: 'Ads & Promos',     src: '/videos/THIM.mp4',        thumb: '/thumbnails/THIM.jpg',        duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Oppo Reno 15',      category: 'Ads & Promos',     src: '/videos/oppo_RENO15.mp4', thumb: '/thumbnails/oppo_RENO15.jpg', duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Thim',              category: 'Ads & Promos',     src: '/videos/THIM.mp4',        thumb: '/thumbnails/THIM.jpg',        duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Model Edit Vol.1',  category: 'Reels Editing',    src: '/videos/model1.mp4',      thumb: '/thumbnails/model1.jpg',      duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Model Edit Vol.2',  category: 'Reels Editing',    src: '/videos/model2.mp4',      thumb: '/thumbnails/model2.jpg',      duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Haldi DJ Night',    category: 'Wedding & Events', src: '/videos/HALDI_DJ.mp4',    thumb: '/thumbnails/HALDI_DJ.jpg',    duration: '0:30', banner: 'Wedding & Events' },
+  { title: 'Car Edit Vol.1',    category: 'Reels Editing',    src: '/videos/car1.mp4',        thumb: '/thumbnails/car1.jpg',        duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.2',    category: 'Reels Editing',    src: '/videos/car2.mp4',        thumb: '/thumbnails/car2.jpg',        duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Bus Reel',          category: 'Reels Editing',    src: '/videos/bus1.mp4',        thumb: '/thumbnails/bus1.jpg',        duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.3',    category: 'Reels Editing',    src: '/videos/car3.mp4',        thumb: '/thumbnails/car3.jpg',        duration: '0:30', banner: 'Vehicle Edits' },
 ]
 
 const TABS = ['All', 'Reels Editing', 'Wedding & Events', 'YouTube Content', 'Ads & Promos']
