@@ -15,6 +15,7 @@ const projects = [
 const TABS = ['All', 'Reels Editing', 'Wedding & Events', 'YouTube Content', 'Ads & Promos']
 
 function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose: () => void }) {
+  const isLandscape = project.category === 'Wedding & Events'
   return (
     <AnimatePresence>
       <motion.div
@@ -29,9 +30,7 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className={`relative ${
-        modalProject.category === 'Wedding & Events' ? 'w-full max-w-4xl aspect-video' : 'w-full max-w-sm aspect-[9/16]'
-      }`}
+          className={`relative ${isLandscape ? 'w-full max-w-4xl aspect-video' : 'w-full max-w-sm aspect-[9/16]'}`}
           onClick={e => e.stopPropagation()}
         >
           <video
@@ -210,7 +209,9 @@ export default function Portfolio() {
                 className="flex items-center gap-4 mb-6"
               >
                 <div className="flex items-center gap-3 px-5 py-2.5 bg-gold/10 border border-gold/30 rounded-full">
-                  <span className="text-lg">🚗</span>
+                  <span className="text-lg">
+                    {group.banner === 'Vehicle Edits' ? '🚗' : group.banner === 'Wedding & Events' ? '💍' : '👗'}
+                  </span>
                   <span className="text-gold text-xs tracking-widest uppercase font-semibold">{group.banner}</span>
                 </div>
                 <div className="flex-1 h-px bg-gold/20" />
