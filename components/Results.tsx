@@ -21,7 +21,7 @@ export default function Results() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="py-28 px-6 max-w-7xl mx-auto">
+    <section ref={ref} className="py-20 px-4 max-w-7xl mx-auto">
       {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function Results() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="bg-[#050505] p-10 text-center group hover:bg-[#0d0d0d] transition-colors duration-300"
+            className="bg-[#050505] p-6 md:p-10 text-center group hover:bg-[#0d0d0d] transition-colors duration-300"
           >
             <p className="font-display text-[clamp(2.5rem,5vw,4rem)] text-gold text-glow leading-none mb-2">
               {m.value}

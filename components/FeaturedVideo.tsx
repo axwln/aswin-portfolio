@@ -14,7 +14,7 @@ export default function FeaturedVideo() {
   }
 
   return (
-    <section ref={ref} className="py-28 px-6 max-w-6xl mx-auto">
+    <section ref={ref} className="py-20 px-4 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

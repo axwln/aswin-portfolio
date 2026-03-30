@@ -164,7 +164,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section id="portfolio" ref={ref} className="py-28 px-6 max-w-7xl mx-auto">
+    <section id="portfolio" ref={ref} className="py-20 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -183,7 +183,7 @@ export default function Portfolio() {
       </motion.div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-3 mb-10">
+      <div className="flex flex-wrap gap-2 mb-8">
         {TABS.map(tab => (
           <button
             key={tab}
@@ -219,7 +219,7 @@ export default function Portfolio() {
                 <div className="flex-1 h-px bg-gold/20" />
               </motion.div>
             )}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {group.items.map((p, i) => (
                 <ProjectCard key={p.title} project={p} index={i} onClick={() => setModalProject(p)} />
               ))}

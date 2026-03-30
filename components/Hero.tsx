@@ -40,41 +40,41 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-10 text-center px-4 max-w-5xl mx-auto"
       >
-        <motion.p variants={item} className="text-gold tracking-[0.4em] text-xs uppercase mb-6 font-medium">
+        <motion.p variants={item} className="text-gold tracking-[0.3em] text-xs uppercase mb-4 font-medium">
           Available for Projects
         </motion.p>
 
         <motion.h1
           variants={item}
-          className="font-display text-[clamp(4rem,12vw,10rem)] leading-none tracking-wide text-white text-glow"
+          className="font-display text-[clamp(3rem,12vw,10rem)] leading-none tracking-wide text-white text-glow"
         >
           ASWIN REJI
         </motion.h1>
 
-        <motion.div variants={item} className="w-24 h-px bg-gold mx-auto my-6" />
+        <motion.div variants={item} className="w-16 h-px bg-gold mx-auto my-5" />
 
         <motion.p
           variants={item}
-          className="text-white/70 text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed"
+          className="text-white/70 text-base md:text-xl font-light max-w-xl mx-auto leading-relaxed px-2"
         >
           Cinematic Video Editor crafting{' '}
           <span className="text-gold font-medium">viral visuals</span> &amp; storytelling
         </motion.p>
 
-        <motion.div variants={item} className="flex gap-4 justify-center mt-10">
+        <motion.div variants={item} className="flex gap-3 justify-center mt-8 flex-wrap">
           <a
             href="#portfolio"
             data-hover
-            className="px-8 py-3 bg-gold text-black font-semibold text-sm tracking-widest uppercase hover:bg-gold-light transition-colors duration-300"
+            className="px-6 py-3 bg-gold text-black font-semibold text-sm tracking-widest uppercase hover:bg-gold-light transition-colors duration-300"
           >
             View Work
           </a>
           <a
             href="#contact"
             data-hover
-            className="px-8 py-3 border border-white/20 text-white text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-colors duration-300"
+            className="px-6 py-3 border border-white/20 text-white text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-colors duration-300"
           >
             Let's Talk
           </a>
