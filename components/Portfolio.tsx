@@ -3,10 +3,10 @@ import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const projects = [
-  { title: 'Car Edit Vol.1', category: 'Reels Editing', src: '/videos/car1.mp4', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.2', category: 'Reels Editing', src: '/videos/car2.mp4', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Bus Reel',       category: 'Reels Editing', src: '/videos/bus1.mp4', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.3', category: 'Reels Editing', src: '/videos/car3.mp4', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.1', category: 'Reels Editing', src: '/videos/car1.mp4', thumb: '/thumbnails/car1.jpg', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.2', category: 'Reels Editing', src: '/videos/car2.mp4', thumb: '/thumbnails/car2.jpg', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Bus Reel',       category: 'Reels Editing', src: '/videos/bus1.mp4', thumb: '/thumbnails/bus1.jpg', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.3', category: 'Reels Editing', src: '/videos/car3.mp4', thumb: '/thumbnails/car3.jpg', duration: '0:30', banner: 'Vehicle Edits' },
 ]
 
 const TABS = ['All', 'Reels Editing', 'YouTube Content', 'Ads & Promos']
@@ -83,14 +83,24 @@ function ProjectCard({ project, index, onClick }: { project: typeof projects[0];
       className="relative aspect-[9/16] rounded-xl overflow-hidden group cursor-pointer"
     >
       <div className="absolute inset-0 bg-[#111]">
+        {/* Thumbnail shown before hover */}
+        {project.thumb && !hovered && (
+          <img
+            src={project.thumb}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+        )}
         <video
           ref={videoRef}
           muted loop playsInline
-          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+          className={`w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 ${
+            hovered ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <source src={project.src} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] opacity-30" />
       </div>
 
       {/* Play icon on hover */}
