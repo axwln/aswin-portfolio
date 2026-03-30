@@ -26,12 +26,12 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-4xl aspect-video"
+          className="relative w-full max-w-sm aspect-[9/16]"
           onClick={e => e.stopPropagation()}
         >
           <video
             autoPlay controls playsInline
-            className="w-full h-full rounded-xl object-cover"
+            className="w-full h-full rounded-xl object-contain"
             muted={false}
           >
             <source src={project.src} type="video/mp4" />
@@ -80,13 +80,13 @@ function ProjectCard({ project, index, onClick }: { project: typeof projects[0];
       onMouseLeave={handleLeave}
       onClick={onClick}
       data-hover
-      className="relative aspect-video rounded-xl overflow-hidden group cursor-pointer"
+      className="relative aspect-[9/16] rounded-xl overflow-hidden group cursor-pointer"
     >
       <div className="absolute inset-0 bg-[#111]">
         <video
           ref={videoRef}
           muted loop playsInline
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
         >
           <source src={project.src} type="video/mp4" />
         </video>
