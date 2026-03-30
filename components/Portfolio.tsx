@@ -9,7 +9,9 @@ const projects = [
   { title: 'Car Edit Vol.3',  category: 'Reels Editing', src: '/videos/car3.mp4',    thumb: '/thumbnails/car3.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
   { title: 'Model Edit Vol.1', category: 'Reels Editing',   src: '/videos/model1.mp4',   thumb: '/thumbnails/model1.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
   { title: 'Model Edit Vol.2', category: 'Reels Editing',   src: '/videos/model2.mp4',   thumb: '/thumbnails/model2.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
-  { title: 'Haldi DJ Night',   category: 'Wedding & Events', src: '/videos/HALDI_DJ.mp4', thumb: '/thumbnails/HALDI_DJ.jpg', duration: '0:30', banner: 'Wedding & Events' },
+  { title: 'Haldi DJ Night',   category: 'Wedding & Events', src: '/videos/HALDI_DJ.mp4',    thumb: '/thumbnails/HALDI_DJ.jpg',    duration: '0:30', banner: 'Wedding & Events' },
+  { title: 'Oppo Reno 15',     category: 'Ads & Promos',     src: '/videos/oppo_RENO15.mp4', thumb: '/thumbnails/oppo_RENO15.jpg', duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Thim',             category: 'Ads & Promos',     src: '/videos/THIM.mp4',        thumb: '/thumbnails/THIM.jpg',        duration: '0:30', banner: 'Ads & Promotions' },
 ]
 
 const TABS = ['All', 'Reels Editing', 'Wedding & Events', 'YouTube Content', 'Ads & Promos']
@@ -210,7 +212,7 @@ export default function Portfolio() {
               >
                 <div className="flex items-center gap-3 px-5 py-2.5 bg-gold/10 border border-gold/30 rounded-full">
                   <span className="text-lg">
-                    {group.banner === 'Vehicle Edits' ? '🚗' : group.banner === 'Wedding & Events' ? '💍' : '👗'}
+                    {group.banner === 'Vehicle Edits' ? '🚗' : group.banner === 'Wedding & Events' ? '💍' : group.banner === 'Ads & Promotions' ? '📢' : '👗'}
                   </span>
                   <span className="text-gold text-xs tracking-widest uppercase font-semibold">{group.banner}</span>
                 </div>
