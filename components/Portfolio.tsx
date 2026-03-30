@@ -7,11 +7,12 @@ const projects = [
   { title: 'Car Edit Vol.2',  category: 'Reels Editing', src: '/videos/car2.mp4',    thumb: '/thumbnails/car2.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
   { title: 'Bus Reel',        category: 'Reels Editing', src: '/videos/bus1.mp4',    thumb: '/thumbnails/bus1.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
   { title: 'Car Edit Vol.3',  category: 'Reels Editing', src: '/videos/car3.mp4',    thumb: '/thumbnails/car3.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Model Edit Vol.1', category: 'Reels Editing', src: '/videos/model1.mp4', thumb: '/thumbnails/model1.jpg', duration: '0:30', banner: 'Clothing & Model Edits' },
-  { title: 'Model Edit Vol.2', category: 'Reels Editing', src: '/videos/model2.mp4', thumb: '/thumbnails/model2.jpg', duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Model Edit Vol.1', category: 'Reels Editing',   src: '/videos/model1.mp4',   thumb: '/thumbnails/model1.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Model Edit Vol.2', category: 'Reels Editing',   src: '/videos/model2.mp4',   thumb: '/thumbnails/model2.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Haldi DJ Night',   category: 'Wedding & Events', src: '/videos/HALDI_DJ.mp4', thumb: '/thumbnails/HALDI_DJ.jpg', duration: '0:30', banner: 'Wedding & Events' },
 ]
 
-const TABS = ['All', 'Reels Editing', 'YouTube Content', 'Ads & Promos']
+const TABS = ['All', 'Reels Editing', 'Wedding & Events', 'YouTube Content', 'Ads & Promos']
 
 function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose: () => void }) {
   return (
