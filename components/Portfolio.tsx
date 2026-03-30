@@ -3,10 +3,12 @@ import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const projects = [
-  { title: 'Car Edit Vol.1', category: 'Reels Editing', src: '/videos/car1.mp4', thumb: '/thumbnails/car1.jpg', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.2', category: 'Reels Editing', src: '/videos/car2.mp4', thumb: '/thumbnails/car2.jpg', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Bus Reel',       category: 'Reels Editing', src: '/videos/bus1.mp4', thumb: '/thumbnails/bus1.jpg', duration: '0:30', banner: 'Vehicle Edits' },
-  { title: 'Car Edit Vol.3', category: 'Reels Editing', src: '/videos/car3.mp4', thumb: '/thumbnails/car3.jpg', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.1',  category: 'Reels Editing', src: '/videos/car1.mp4',    thumb: '/thumbnails/car1.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.2',  category: 'Reels Editing', src: '/videos/car2.mp4',    thumb: '/thumbnails/car2.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Bus Reel',        category: 'Reels Editing', src: '/videos/bus1.mp4',    thumb: '/thumbnails/bus1.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.3',  category: 'Reels Editing', src: '/videos/car3.mp4',    thumb: '/thumbnails/car3.jpg',    duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Model Edit Vol.1', category: 'Reels Editing', src: '/videos/model1.mp4', thumb: '/thumbnails/model1.jpg', duration: '0:30', banner: 'Clothing & Model Edits' },
+  { title: 'Model Edit Vol.2', category: 'Reels Editing', src: '/videos/model2.mp4', thumb: '/thumbnails/model2.jpg', duration: '0:30', banner: 'Clothing & Model Edits' },
 ]
 
 const TABS = ['All', 'Reels Editing', 'YouTube Content', 'Ads & Promos']
