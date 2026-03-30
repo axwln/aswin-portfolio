@@ -1,10 +1,17 @@
 'use client'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 export default function FeaturedVideo() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(false)
+
+  const handlePlay = () => {
+    videoRef.current?.play()
+    setPlaying(true)
+  }
 
   return (
     <section ref={ref} className="py-28 px-6 max-w-6xl mx-auto">
@@ -26,26 +33,34 @@ export default function FeaturedVideo() {
         transition={{ duration: 1, delay: 0.2 }}
         className="relative rounded-2xl overflow-hidden glow-gold"
       >
-        {/* Aspect ratio wrapper */}
         <div className="relative aspect-video bg-black">
           <video
-            autoPlay muted loop playsInline
+            ref={videoRef}
+            playsInline
+            controls={playing}
             className="w-full h-full object-cover"
+            onEnded={() => setPlaying(false)}
           >
-            {/* Replace with your showreel video */}
             <source src="/videos/showreel.mp4" type="video/mp4" />
           </video>
 
-          {/* Play button overlay (shown when video not playing) */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-20 h-20 rounded-full border-2 border-white/20 flex items-center justify-center backdrop-blur-sm bg-black/20">
-              <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+          {/* Click to play overlay */}
+          {!playing && (
+            <div
+              onClick={handlePlay}
+              className="absolute inset-0 flex items-center justify-center cursor-pointer group"
+            >
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="w-20 h-20 rounded-full border-2 border-gold flex items-center justify-center backdrop-blur-sm bg-black/40"
+              >
+                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-gold border-b-[10px] border-b-transparent ml-1" />
+              </motion.div>
             </div>
-          </div>
+          )}
         </div>
 
-        {/* Bottom bar */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
+        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end pointer-events-none">
           <div>
             <p className="text-white font-semibold">Cinematic Showreel</p>
             <p className="text-white/50 text-sm">2024 — Best of Collection</p>

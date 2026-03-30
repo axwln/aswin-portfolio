@@ -34,6 +34,7 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           <video
             autoPlay controls playsInline
             className="w-full h-full rounded-xl object-cover"
+            muted={false}
           >
             <source src={project.src} type="video/mp4" />
           </video>
