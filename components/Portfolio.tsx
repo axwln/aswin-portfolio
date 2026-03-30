@@ -3,12 +3,10 @@ import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const projects = [
-  { title: 'Brand Campaign', category: 'Ads & Promos', src: '/videos/project1.mp4', duration: '0:45' },
-  { title: 'Travel Reel', category: 'Reels Editing', src: '/videos/project2.mp4', duration: '0:30' },
-  { title: 'Product Launch', category: 'YouTube Content', src: '/videos/project3.mp4', duration: '2:15' },
-  { title: 'Music Video', category: 'Reels Editing', src: '/videos/project4.mp4', duration: '3:40' },
-  { title: 'Food Content', category: 'Reels Editing', src: '/videos/project5.mp4', duration: '0:15' },
-  { title: 'Corporate Film', category: 'Ads & Promos', src: '/videos/project6.mp4', duration: '1:30' },
+  { title: 'Car Edit Vol.1', category: 'Reels Editing', src: '/videos/car1.mp4', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.2', category: 'Reels Editing', src: '/videos/car2.mp4', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Bus Reel',       category: 'Reels Editing', src: '/videos/bus1.mp4', duration: '0:30', banner: 'Vehicle Edits' },
+  { title: 'Car Edit Vol.3', category: 'Reels Editing', src: '/videos/car3.mp4', duration: '0:30', banner: 'Vehicle Edits' },
 ]
 
 const TABS = ['All', 'Reels Editing', 'YouTube Content', 'Ads & Promos']
@@ -137,6 +135,15 @@ export default function Portfolio() {
 
   const filtered = activeTab === 'All' ? projects : projects.filter(p => p.category === activeTab)
 
+  // Group by banner
+  const groups = filtered.reduce<{ banner: string; items: typeof projects }[]>((acc, p) => {
+    const banner = p.banner ?? ''
+    const existing = acc.find(g => g.banner === banner)
+    if (existing) existing.items.push(p)
+    else acc.push({ banner, items: [p] })
+    return acc
+  }, [])
+
   return (
     <section id="portfolio" ref={ref} className="py-28 px-6 max-w-7xl mx-auto">
       <motion.div
@@ -173,13 +180,32 @@ export default function Portfolio() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <AnimatePresence mode="popLayout">
-          {filtered.map((p, i) => (
-            <ProjectCard key={p.title} project={p} index={i} onClick={() => setModalProject(p)} />
-          ))}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence mode="popLayout">
+        {groups.map(group => (
+          <div key={group.banner} className="mb-12">
+            {group.banner && (
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-4 mb-6"
+              >
+                <div className="flex items-center gap-3 px-5 py-2.5 bg-gold/10 border border-gold/30 rounded-full">
+                  <span className="text-lg">🚗</span>
+                  <span className="text-gold text-xs tracking-widest uppercase font-semibold">{group.banner}</span>
+                </div>
+                <div className="flex-1 h-px bg-gold/20" />
+              </motion.div>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {group.items.map((p, i) => (
+                <ProjectCard key={p.title} project={p} index={i} onClick={() => setModalProject(p)} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </AnimatePresence>
 
       {modalProject && (
         <VideoModal project={modalProject} onClose={() => setModalProject(null)} />
