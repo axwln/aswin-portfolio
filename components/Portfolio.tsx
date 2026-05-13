@@ -3,8 +3,12 @@ import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const projects = [
-  { title: 'Oppo Reno 15',      category: 'Ads & Promos',     src: '/videos/oppo_RENO15.mp4', thumb: '/thumbnails/oppo_RENO15.jpg', duration: '0:30', banner: 'Ads & Promotions' },
-  { title: 'Thim',              category: 'Ads & Promos',     src: '/videos/THIM.mp4',        thumb: '/thumbnails/THIM.jpg',        duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Oppo Reno 15',       category: 'Ads & Promos', src: '/videos/oppo_RENO15.mp4',        thumb: '/thumbnails/oppo_RENO15.jpg',        duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Thim',               category: 'Ads & Promos', src: '/videos/THIM.mp4',               thumb: '/thumbnails/THIM.jpg',               duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Dental Treatment',   category: 'Ads & Promos', src: '/videos/dental_tratment.mp4',    thumb: '/thumbnails/dental_tratment.jpg',    duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'FD 01',              category: 'Ads & Promos', src: '/videos/fd_01.mp4',              thumb: '/thumbnails/fd_01.jpg',              duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'AI Makeover Studio', category: 'Ads & Promos', src: '/videos/ai_makeover_studio.mp4', thumb: '/thumbnails/ai_makeover_studio.jpg', duration: '0:30', banner: 'Ads & Promotions' },
+  { title: 'Kaloor',             category: 'Ads & Promos', src: '/videos/kaloor.mp4',             thumb: '/thumbnails/kaloor.jpg',             duration: '0:30', banner: 'Ads & Promotions' },
   { title: 'Model Edit Vol.1',  category: 'Reels Editing',    src: '/videos/model1.mp4',      thumb: '/thumbnails/model1.jpg',      duration: '0:30', banner: 'Clothing & Model Edits' },
   { title: 'Model Edit Vol.2',  category: 'Reels Editing',    src: '/videos/model2.mp4',      thumb: '/thumbnails/model2.jpg',      duration: '0:30', banner: 'Clothing & Model Edits' },
   { title: 'Kids Wear Reels',   category: 'Reels Editing',    src: '/videos/KIDSWEAR_REELS.mp4',   thumb: '/thumbnails/KIDSWEAR_REELS.jpg',   duration: '0:30', banner: 'Clothing & Model Edits' },
